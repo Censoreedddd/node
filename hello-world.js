@@ -1,0 +1,21 @@
+// hello-world.js
+console.log("HELLO WORLD");
+// server.js
+const http = require('http');
+
+const server = http.createServer((req, res) => {
+  res.writeHead(200, { 'Content-Type': 'text/html' });
+  res.end('<h1>Hello Node!!!!</h1>\n');
+});
+
+server.listen(3000, () => {
+  console.log('Server is running on http://localhost:3000');
+});
+// read-file.js
+const fs = require('fs');
+
+fs.readFile('hello.txt', 'utf8', (err, data) => {
+  if (err) throw err;
+  console.log('File content:');
+  console.log(data);
+});
